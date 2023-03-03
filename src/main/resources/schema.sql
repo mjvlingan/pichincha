@@ -23,9 +23,9 @@ CREATE TABLE Cuenta (
         idCliente int NOT NULL,
         numeroCuenta varchar(6) NOT NULL,
         tipoCuenta varchar(15) NOT NULL,
-        saldoInicial int NOT NULL,
+        saldo int NOT NULL,
         estadoCuenta binary NOT NULL,
-        PRIMARY KEY (idCuenta, idCliente),
+        PRIMARY KEY (idCuenta),
         CONSTRAINT FK_1 FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente)
     );
 
@@ -34,9 +34,9 @@ CREATE TABLE Movimientos (
         fecha date NOT NULL,
         idCuenta int NOT NULL,
         tipoMovimiento varchar(45) NOT NULL,
-        idCliente int NOT NULL,
         valor int NOT NULL,
-        saldo int NOT NULL,
+        saldoInicial int NOT NULL,
+        saldoFinal int NOT NULL,
         PRIMARY KEY (idMovimiento),
-        CONSTRAINT FK_2 FOREIGN KEY (idCuenta, idCliente) REFERENCES Cuenta (idCuenta, idCliente)
+        CONSTRAINT FK_2 FOREIGN KEY (idCuenta) REFERENCES Cuenta (idCuenta)
     );

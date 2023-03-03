@@ -1,5 +1,6 @@
 package com.pichincha.bank.domain.request;
 
+import com.pichincha.bank.domain.request.type.GeneroEnum;
 import lombok.Data;
 
 @Data
@@ -10,5 +11,5 @@ public class RegisterUserRequest {
     private String password;
     private String edad;
     private String identificacion;
-    private String genero;
+    private GeneroEnum genero;
 }

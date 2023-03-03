@@ -2,9 +2,8 @@ package com.pichincha.bank.infrastructure.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,6 +14,6 @@ public class CuentaEntity {
     private Integer idCliente;
     private String numeroCuenta;
     private String tipoCuenta;
-    private int saldoInicial;
+    private int saldo;
     private boolean estadoCuenta;
 }
