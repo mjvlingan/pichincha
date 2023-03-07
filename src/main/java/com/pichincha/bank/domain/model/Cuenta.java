@@ -1,5 +1,8 @@
 package com.pichincha.bank.domain.model;
 
+import com.github.damianwajser.validator.annotation.enums.MatchEnum;
+import com.pichincha.bank.domain.Constantes;
+import com.pichincha.bank.domain.request.type.TipoCuentaEnum;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,8 +13,10 @@ import java.util.List;
 public class Cuenta {
     private int idCuenta;
     private String numeroCuenta;
-    private String tipoCuenta;
-    private int saldoInicial;
+    @MatchEnum(businessCode = Constantes.ENUM_VALIDATION,
+            message = "{invalid.enum}", enumClass = TipoCuentaEnum.class)
+    private TipoCuentaEnum tipoCuenta;
+    private int saldo;
     private boolean estadoCuenta;
-    private List<Movimientos> movimientos;
+    private List<Movimiento> movimientos;
 }

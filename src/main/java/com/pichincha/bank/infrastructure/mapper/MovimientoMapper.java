@@ -14,5 +14,4 @@ public interface MovimientoMapper {
     @Mapping(target = "saldoInicial", source = "saldoInicial")
     @Mapping(target = "saldoFinal", source = "saldoFinal")
     MovimientoEntity toMovimientoEntity(RegisterOperationRequest request, int saldoInicial, int saldoFinal);
-
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class Cliente {
+public class Cliente extends Persona {
     private int idCliente;
     private String password;
     private boolean estadoCliente;

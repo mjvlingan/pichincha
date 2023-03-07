@@ -1,6 +1,6 @@
 package com.pichincha.bank.infrastructure.mapper;
 
-import com.pichincha.bank.domain.request.RegisterAccountRequest;
+import com.pichincha.bank.domain.model.Cuenta;
 import com.pichincha.bank.infrastructure.entity.CuentaEntity;
 import lombok.Generated;
 import org.mapstruct.Mapper;
@@ -11,8 +11,14 @@ import org.mapstruct.Mapping;
 public interface CuentaMapper {
 
     @Mapping(target = "idCuenta", ignore = true)
-    @Mapping(target = "estadoCuenta", source = "estadoCuenta")
-    @Mapping(target = "saldo", source = "request.saldoInicial")
-    CuentaEntity toCuentaEntity(RegisterAccountRequest request, boolean estadoCuenta);
+    @Mapping(target = "idCliente", source = "idCliente")
+    @Mapping(target = "estadoCuenta", source = "estado")
+    CuentaEntity toCuentaEntity(int idCliente, Cuenta cuenta, boolean estado);
 
+    @Mapping(target = "idCliente", ignore = true)
+    @Mapping(target = "estadoCuenta", source = "estado")
+    CuentaEntity toCuentaEntityUpdate(Cuenta cuenta, boolean estado);
+
+    @Mapping(target = "movimientos", ignore = true)
+    Cuenta toCuenta(CuentaEntity cuentaEntity);
 }
