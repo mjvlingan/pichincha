@@ -35,7 +35,8 @@ public class MovimientosController {
     }
 
     @DeleteMapping(value = "/eliminar", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public void eliminarMovimiento(@RequestHeader int idMovimiento) throws RestException {
+    public ResponseEntity<Integer> eliminarMovimiento(@RequestHeader int idMovimiento) throws RestException {
         movimientoService.deleteMovimiento(idMovimiento);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

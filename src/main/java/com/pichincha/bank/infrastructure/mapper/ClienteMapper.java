@@ -13,7 +13,7 @@ public interface ClienteMapper {
     @Mapping(target = "idPersona", source = "idPersona")
     @Mapping(target = "estadoCliente", source = "estado")
     @Mapping(target = "idCliente", ignore = true)
-    ClienteEntity toClienteEntity(int idPersona, Cliente cliente, boolean estado);
+    ClienteEntity toClienteEntity(Integer idPersona, Cliente cliente, boolean estado);
 
     @Mapping(target = "cuentas", ignore = true)
     Cliente toCliente(ClienteEntity clienteEntity);

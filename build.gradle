@@ -31,6 +31,8 @@ dependencies {
 	implementation 'org.hsqldb:hsqldb:2.7.1'
 	implementation 'com.github.damianwajser:spring-commons-exception-handler:1.28.4'
 	implementation 'com.github.damianwajser:spring-commons-rest-validation:1.28.4'
+	testImplementation 'junit:junit:4.12'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.14.2'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 }
 

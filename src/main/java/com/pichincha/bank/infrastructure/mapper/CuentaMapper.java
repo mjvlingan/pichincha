@@ -13,7 +13,7 @@ public interface CuentaMapper {
     @Mapping(target = "idCuenta", ignore = true)
     @Mapping(target = "idCliente", source = "idCliente")
     @Mapping(target = "estadoCuenta", source = "estado")
-    CuentaEntity toCuentaEntity(int idCliente, Cuenta cuenta, boolean estado);
+    CuentaEntity toCuentaEntity(Integer idCliente, Cuenta cuenta, boolean estado);
 
     @Mapping(target = "idCliente", ignore = true)
     @Mapping(target = "estadoCuenta", source = "estado")

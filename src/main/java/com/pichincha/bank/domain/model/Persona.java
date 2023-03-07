@@ -4,9 +4,13 @@ import com.github.damianwajser.validator.annotation.enums.MatchEnum;
 import com.github.damianwajser.validator.annotation.global.Size;
 import com.pichincha.bank.domain.Constantes;
 import com.pichincha.bank.domain.request.type.GeneroEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
+@AllArgsConstructor
 public class Persona {
     private int idPersona;
     private String nombre;

@@ -22,8 +22,8 @@ public class CuentaController {
     private final CuentaService cuentaService;
 
     @PostMapping(value = "/registrar", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<Cuenta> registrarCuenta(@RequestHeader int idCuenta, @RequestBody RegisterCuentaRequest request) throws RestException {
-        cuentaService.registerAccount(idCuenta, request);
+    public ResponseEntity<Cuenta> registrarCuenta(@RequestHeader int idCliente, @RequestBody RegisterCuentaRequest request) throws RestException {
+        cuentaService.registerAccount(idCliente, request);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
